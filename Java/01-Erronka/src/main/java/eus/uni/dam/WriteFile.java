@@ -9,14 +9,10 @@ public class WriteFile {
 	   public static void main(String[] args) {
 	      BufferedWriter bw = null;
 	      try {
-		 String mycontent = "This String would be written" +
-		    " to the specified File";
-	         //Specify the file name and path here
-		 File file = new File("C:/myfile.txt");
-
-		 /* This logic will make sure that the file 
-		  * gets created if it is not present at the
-		  * specified location*/
+		 String mycontent = Pelicula peli:peliDao.getPeliculas();
+		 
+		 File file = new File("C:/datuak.txt");
+		 
 		  if (!file.exists()) {
 		     file.createNewFile();
 		  }
@@ -39,4 +35,5 @@ public class WriteFile {
 		    }
 		}
 	   }
+	   ((AnnotationConfigApplicationContext) appContext).close();
 	}
