@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="-320dp">
 
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/btn_show_bg1"
             android:layout_width="155dp"
             android:layout_height="137dp"
             android:layout_alignParentStart="true"
