@@ -11,16 +11,16 @@ import javax.annotation.PreDestroy;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PeliculaDaoJdbc  implements PeliculaDao{
+public class SalmentaDaoJdbc  implements SalmentaDao{
 
-	public List<Pelicula> peliculas = new ArrayList<>();
+	public List<Salmenta> salmentas = new ArrayList<>();
 
-	PeliculaDaoJdbc() {
+	SalmentaDaoJdbc() {
 
 	};
 
-	public Collection<Pelicula> getPeliculas() {
-		return peliculas;
+	public Collection<Salmenta> getPeliculas() {
+		return salmentas;
 	};
 
 	/** Datu-basetik datuak berreskuratu eta memoriako zerrendan kargatu. 
@@ -31,24 +31,24 @@ public class PeliculaDaoJdbc  implements PeliculaDao{
 		
 	}
 
-	public Collection<Pelicula> findAll() {
-		return peliculas;
+	public Collection<Salmenta> findAll() {
+		return salmentas;
 	}
 
 	/** DBan INSERT bat egin, eta dena ondo balego, memorian be egin insert-a.
 	 * 
 	 * @param pelicula
 	 */
-	public void insert(Pelicula pelicula) {
+	public void insert(Salmenta salmenta) {
 		// DBan insert-a
-		peliculas.add(pelicula);
+		salmentas.add(salmenta);
 	};
 
 	/** DBan UPDATE bat egin, eta dena ondo balego, memorian be...
 	 *  
 	 * @param pelicula
 	 */
-	public void edit(Pelicula pelicula) {
+	public void edit(Salmenta salmenta) {
 		//TO-DO
 	};
 	
@@ -57,7 +57,7 @@ public class PeliculaDaoJdbc  implements PeliculaDao{
 	 * @param id
 	 */	
 	public void delete(long id) {
-		peliculas.remove(id);
+		salmentas.remove(id);
 	};
 
 	/** Momentuoro, aldaketak, bai memorian, bai dban bertan egin izan ditugu,
@@ -69,5 +69,11 @@ public class PeliculaDaoJdbc  implements PeliculaDao{
 	@PreDestroy
 	public void destroy() {
 		
+	}
+
+	@Override
+	public Collection<Salmenta> getSalmenta() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

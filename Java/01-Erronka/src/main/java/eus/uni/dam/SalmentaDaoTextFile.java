@@ -18,17 +18,17 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PeliculaDaoTextFile  implements PeliculaDao{
+public class SalmentaDaoTextFile  implements SalmentaDao{
 
-	String filename = "Peliak.csv";
-	public List<Pelicula> peliculas = new ArrayList<>();
+	String filename = "Salmentas.csv";
+	public List<Salmenta> salmentas = new ArrayList<>();
 
-	PeliculaDaoTextFile() {
+	SalmentaDaoTextFile() {
 
 	};
 
-	public Collection<Pelicula> getPeliculas() {
-		return peliculas;
+	public Collection<Salmenta> getPeliculas() {
+		return salmentas;
 	};
 
 	/**
@@ -45,8 +45,8 @@ public class PeliculaDaoTextFile  implements PeliculaDao{
 	 * Memorian, aurretik kargatu dugun zerrenda itzultzen du metodo honek
 	 * 
 	 */
-	public Collection<Pelicula> findAll() {
-		return peliculas;
+	public Collection<Salmenta> findAll() {
+		return salmentas;
 	}
 
 	/**
@@ -54,8 +54,8 @@ public class PeliculaDaoTextFile  implements PeliculaDao{
 	 * 
 	 * @param pelicula
 	 */
-	public void insert(Pelicula pelicula) {
-		peliculas.add(pelicula);
+	public void insert(Salmenta salmenta) {
+		salmentas.add(salmenta);
 	};
 
 	/**
@@ -63,7 +63,7 @@ public class PeliculaDaoTextFile  implements PeliculaDao{
 	 * 
 	 * @param pelicula
 	 */
-	public void edit(Pelicula pelicula) {
+	public void edit(Salmenta salmenta) {
 		// TO-DO
 	};
 
@@ -84,5 +84,11 @@ public class PeliculaDaoTextFile  implements PeliculaDao{
 	@PreDestroy
 	public void destroy() {
         //TO-DO
+	}
+
+	@Override
+	public Collection<Salmenta> getSalmenta() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
