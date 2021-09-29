@@ -1,6 +1,4 @@
 package eus.uni.dam;
-
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
-public class Konexioa {
+public class FileWrite {
 	static final String DB_URL = "jdbc:postgresql://192.168.65.21/ErronkaUno";
 	static final String USER = "openpg";
 	static final String PASS = "openpgpwd";
@@ -21,11 +19,9 @@ public class Konexioa {
 	public static void main(String[] args) throws SQLException {
 		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		BufferedWriter bw = null;
 		ArrayList<String> listaDatuak = new ArrayList<String>();
-		File file = new File("C:\\Users\\garate.hegoi\\Desktop\\datuak\\datuak.txt");
+		File file = new File("db\\datuak.txt");
 		FileWriter fr = null;
-		BufferedWriter br = null;
 
 		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 				Statement stmt = conn.createStatement();
@@ -38,31 +34,24 @@ public class Konexioa {
 						+ rs.getDate("create_date") + " , " + rs.getInt("user_id") + " , " + rs.getInt("partner_id")
 						+ " , " + rs.getInt("amount_total") + System.getProperty("line.separator");
 				listaDatuak.add(dataWithNewLine);
+			}
+			
+			try {
+				fr = new FileWriter(file);
+				for (String i : listaDatuak) {
+					fr.write(i);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
 				try {
-					fr = new FileWriter(file);
-					br = new BufferedWriter(fr);
-					for (String i : listaDatuak) {
-						br.write(i);
-
-					}
+					fr.close();
 				} catch (IOException e) {
 					e.printStackTrace();
-				} finally {
-					try {
-						br.close();
-						fr.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
 				}
 			}
-			try {
-				if (bw != null)
-					bw.close();
-			} catch (Exception ex) {
-				System.out.println("Error in closing the BufferedWriter" + ex);
-			}
 		}
+		
 		((AnnotationConfigApplicationContext) appContext).close();
 	}
 }
