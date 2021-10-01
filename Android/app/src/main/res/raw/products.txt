@@ -1,0 +1,5 @@
+1,Arcanum,71.84,null,0.01,0.05,true,true,true,true
+2,Astrology,18.30,null,0.01,0.04,true,true,true,true
+4,Hollow Dragon,42.50,null,0.01,0.06,true,true,true,true
+5,Radiant Relic,71.00,null,0.01,0.05,true,true,true,true
+3,Call Beyond,18.30,null,0.01,0.04,true,true,true,true
