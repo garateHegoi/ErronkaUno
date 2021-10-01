@@ -1,4 +1,4 @@
-package eus.uni.dam;
+package dam;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -16,8 +17,15 @@ public class WriteFile {
 	
 	public static void main(String[] args) {
 		
+<<<<<<< HEAD:Java/01-ErronkaUno/src/main/java/eus/uni/dam/WriteFile.java
 		List<Products> lista= new ArrayList<Products>();
+=======
+		Scanner SC = new Scanner(System.in);
 		
+		System.out.println("WriteFile");
+>>>>>>> b459ae6ee5e60693d698a9e9c12ea09bd8ef4569:java/01-ErronkaUno/src/main/java/dam/WriteFile.java
+		
+		List<Customer> lista= new ArrayList<Customer>();
 		String DB_URL = "jdbc:postgresql://192.168.65.21/ErronkaUno";
 		String USER = "openpg";
 		String PASS = "openpgpwd";
@@ -37,6 +45,7 @@ public class WriteFile {
 		         e.printStackTrace();
 		      }
 		
+		//Writer
 		try {
 		      File myObj = new File("db\\products.txt");		      
 		      if (myObj.createNewFile()) {
@@ -52,11 +61,8 @@ public class WriteFile {
 		    } catch (IOException e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
-		    }
-		 
-
+		   }
+		SC.close();
+		
 	}
-
-
-
 }

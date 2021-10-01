@@ -1,5 +1,4 @@
-package eus.uni.dam;
-
+package dam;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
