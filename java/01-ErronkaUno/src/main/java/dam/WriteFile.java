@@ -17,19 +17,11 @@ public class WriteFile {
 	
 	public static void main(String[] args) {
 		
-<<<<<<< HEAD:Java/01-ErronkaUno/src/main/java/eus/uni/dam/WriteFile.java
 		List<Products> lista= new ArrayList<Products>();
-=======
-		Scanner SC = new Scanner(System.in);
-		
-		System.out.println("WriteFile");
->>>>>>> b459ae6ee5e60693d698a9e9c12ea09bd8ef4569:java/01-ErronkaUno/src/main/java/dam/WriteFile.java
-		
-		List<Customer> lista= new ArrayList<Customer>();
 		String DB_URL = "jdbc:postgresql://192.168.65.21/ErronkaUno";
 		String USER = "openpg";
 		String PASS = "openpgpwd";
-		String QUERY = "SELECT id, 'name', description, list_price, volume, weight, sale_ok, purchase_ok,is_published, active FROM public.product_template";
+		String QUERY = "SELECT id, name, description, list_price, volume, weight, sale_ok, purchase_ok,is_published, active FROM public.product_template";
 		
 		try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 		         Statement stmt = conn.createStatement();
@@ -62,7 +54,6 @@ public class WriteFile {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
 		   }
-		SC.close();
 		
 	}
 }

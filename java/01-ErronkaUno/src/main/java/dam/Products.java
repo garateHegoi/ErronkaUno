@@ -1,4 +1,4 @@
-package eus.uni.dam;
+package dam;
 
 public class Products{
 	

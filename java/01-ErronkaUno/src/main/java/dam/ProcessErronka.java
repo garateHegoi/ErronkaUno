@@ -15,7 +15,6 @@ public class ProcessErronka {
 			Process process = PB.start();
 			OutputStream OS = process.getOutputStream();
 			OS.flush();
-			System.out.println("Cock");
 			OS.close();
 
 		} catch (IOException e) {
