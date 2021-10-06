@@ -3,11 +3,11 @@ package dam;
 public class Products{
 	
 	int ID;
-	String name,list_price,description,volume,weight;
-	boolean sale_ok,purchase_ok,active,is_published;
+	String name,list_price,description,volume,weight,stock;
+	boolean sale_ok,active,is_published;
 	
-	public Products(int iD, String name, String list_price, String description, String volume, String weight,
-			boolean sale_ok, boolean purchase_ok, boolean active, boolean is_published) {
+	public Products(int iD, String name, String list_price, String description, String volume, String weight,String stock,
+			boolean sale_ok, boolean active, boolean is_published) {
 		super();
 		ID = iD;
 		this.name = name;
@@ -15,10 +15,18 @@ public class Products{
 		this.description = description;
 		this.volume = volume;
 		this.weight = weight;
+		this.stock = stock;
 		this.sale_ok = sale_ok;
-		this.purchase_ok = purchase_ok;
 		this.active = active;
 		this.is_published = is_published;
+	}
+
+	public String getStock() {
+		return stock;
+	}
+
+	public void setStock(String stock) {
+		this.stock = stock;
 	}
 
 	public int getID() {
@@ -77,14 +85,6 @@ public class Products{
 		this.sale_ok = sale_ok;
 	}
 
-	public boolean isPurchase_ok() {
-		return purchase_ok;
-	}
-
-	public void setPurchase_ok(boolean purchase_ok) {
-		this.purchase_ok = purchase_ok;
-	}
-
 	public boolean isActive() {
 		return active;
 	}
@@ -104,11 +104,14 @@ public class Products{
 	@Override
 	public String toString() {
 		return "Products [ID=" + ID + ", name=" + name + ", list_price=" + list_price + ", description=" + description
-				+ ", volume=" + volume + ", weight=" + weight + ", sale_ok=" + sale_ok + ", purchase_ok=" + purchase_ok
+				+ ", volume=" + volume + ", weight=" + weight + ", stock=" + stock + ", sale_ok=" + sale_ok
 				+ ", active=" + active + ", is_published=" + is_published + "]";
 	}
+
 	
+
 	
-	
+
+
 	
 }

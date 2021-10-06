@@ -1,54 +1,83 @@
 package com.example.erronkauno;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.MenuItemCompat;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.TextView;
-
+import android.widget.Toast;
 
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements Serializable {
     ListView lv;
     int n = 0;
+    ArrayList<Products> result = new ArrayList<Products>();
     ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar)  findViewById(R.id.nav_search);
-        setSupportActionBar(toolbar);
-        ActionBar actionbar = getSupportActionBar();
+        aldatzailea();
+        Log.d("result says", result.get(0).getName());
         lv = (ListView) findViewById(R.id.tv_emptyTextView);
         adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,aldatzaileanames());
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                for (Products a:result) {
+                    if (a.getName().equals(adapter.getItem(i))){
+                        Log.d("result says", a.getID()+"");
+                        Intent datos = new Intent(MainActivity.this,MainActivity2.class);
+                        datos.putExtra("id",a.getID()+"");
+                        datos.putExtra("name",a.getName());
+                        datos.putExtra("description",a.getDescription());
+                        datos.putExtra("volume",a.getVolume());
+                        datos.putExtra("weight",a.getWeight());
+                        datos.putExtra("stock",a.getStock());
+                        datos.putExtra("list_price",a.getList_price());
+                        datos.putExtra("active",a.isActive()+"");
+                        datos.putExtra("published",a.isIs_published()+"");
+                        datos.putExtra("sale_ok",a.isSale_ok()+"");
+                        startActivity(datos);
+                    }
+                }
+
+
+            }
+        });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menudos) {
-        MenuInflater mf = getMenuInflater();
-        mf.inflate(R.menu.menu,menudos);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_op,menu);
+        MenuItem menuItem = menu.findItem(R.id.nav_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setQueryHint("Buscar...");
 
-        MenuItem search = (MenuItem) findViewById(R.id.nav_search);
-        SearchView sv = (SearchView) MenuItemCompat.getActionView(search);
-
-        return super.onCreateOptionsMenu(menudos);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query){
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText){
+                adapter.getFilter().filter(newText);
+                return true;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     public ArrayList<String> irakurri() {
@@ -78,26 +107,24 @@ public class MainActivity extends AppCompatActivity {
         return listaDatuak;
     }
 
-        public ArrayList<Products> aldatzailea(){
-            ArrayList<String> produktuak = irakurri();
-            ArrayList<Products> result = new ArrayList<Products>();
-            for (String produktu : produktuak) {
-                String[] produktuak_aldatuta = produktu.split("[,]", 0);
-                for (String gauza: produktuak_aldatuta){
-                    Log.d("xd", gauza);
-                }
-                Products p = new Products(Integer.parseInt(produktuak_aldatuta[0]), produktuak_aldatuta[1], produktuak_aldatuta[2], produktuak_aldatuta[3], produktuak_aldatuta[4], produktuak_aldatuta[5], Boolean.parseBoolean(produktuak_aldatuta[6]), Boolean.parseBoolean(produktuak_aldatuta[7]), Boolean.parseBoolean(produktuak_aldatuta[8]), Boolean.parseBoolean(produktuak_aldatuta[9]));
-                result.add(p);
-
-
+    public void aldatzailea(){
+       ArrayList<String> produktuak = irakurri();
+        for (String produktu : produktuak) {
+            String[] produktuak_aldatuta = produktu.split("[;]", 0);
+            for (String gauza : produktuak_aldatuta) {
+                Log.d("xd", gauza);
             }
-            return result;
+            Products p = new Products(Integer.parseInt(produktuak_aldatuta[0]), produktuak_aldatuta[1], produktuak_aldatuta[2], produktuak_aldatuta[3], produktuak_aldatuta[4], produktuak_aldatuta[5],produktuak_aldatuta[6], Boolean.parseBoolean(produktuak_aldatuta[7]), Boolean.parseBoolean(produktuak_aldatuta[8]), Boolean.parseBoolean(produktuak_aldatuta[9]));
+            result.add(p);
         }
+    }
+
+
     public  ArrayList<String> aldatzaileanames(){
         ArrayList<String> produktuak = irakurri();
         ArrayList<String> names = new ArrayList<String>();
         for (String produktu : produktuak) {
-            String[] produktuak_aldatuta = produktu.split("[,]", 0);
+            String[] produktuak_aldatuta = produktu.split("[;]", 0);
             for (String gauza: produktuak_aldatuta){
                 Log.d("xd", gauza);
             }
@@ -107,4 +134,15 @@ public class MainActivity extends AppCompatActivity {
         }
         return names;
     }
+
+    public ArrayList<String> aldatzaileastring(int index){
+        ArrayList<String> produktuak = irakurri();
+        ArrayList<String> result = new ArrayList<>();
+        String[] produktuak_aldatuta = produktuak.get(index).split("[,]", 0);
+        for (int i= 0; i < produktuak_aldatuta.length; i++){
+            result.add(produktuak_aldatuta[i]);
+        }
+        return result;
+        }
+
     }

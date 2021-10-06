@@ -1,5 +1,5 @@
-1,Arcanum,71.84,null,0.01,0.05,true,true,true,true
-2,Astrology,18.30,null,0.01,0.04,true,true,true,true
-4,Hollow Dragon,42.50,null,0.01,0.06,true,true,true,true
-5,Radiant Relic,71.00,null,0.01,0.05,true,true,true,true
-3,Call Beyond,18.30,null,0.01,0.04,true,true,true,true
+1;Arcanum;71.84;Los Dados Arcanum fueron forjados para hacer girar los hilos del tiempo y la magia que recorren toda la realidad material. Revelan sus secretos sólo a aquellos lo suficientemente valientes como para levantar el velo y mirar lo que hay más allá !;0.01;0.05;122.0;true;true;true
+3;Call Beyond;18.30;Dados hechos a mano en verde azul azulante fantasmal y negro, capturando la esencia de la otra vida.;0.01;0.04;152.0;true;true;true
+5;Radiant Relic;71.00;Los conjuntos De reliquias dañadas y radiantes son una continuación de mi conjunto anterior de reliquias oscuras siguiendo un diseño similar.¡Espero que te gusten estos sets tanto!;0.01;0.05;94.0;true;true;true
+4;Hollow Dragon;42.50;¡Este es un juego completo de dados de metal para todas tus necesidades de juego! Estos dados vienen en una amplia gama de colores para elegir y están meticulosamente elaborados para el equilibrio y los números claros.;0.01;0.06;107.0;true;true;true
+2;Astrology;18.30;Estos son dados de resina de borde afilado hechos a mano y pulidos con inclusiones. Y los dados están infundidos con hermosas escamas de brillo.;0.01;0.04;112.0;true;true;true
