@@ -2,13 +2,17 @@ package com.example.erronkauno;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.util.*;
+import android.graphics.BitmapFactory;
 import java.sql.*;
+import java.io.*;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -27,11 +31,19 @@ public class MainActivity2 extends AppCompatActivity {
                 getIntent().getStringExtra("volume"),
                 getIntent().getStringExtra("weight"),
                 getIntent().getStringExtra("stock"),
+                getIntent().getStringExtra("imagen"),
+                Boolean.parseBoolean(getIntent().getStringExtra("sale_ok")),
                 Boolean.parseBoolean(getIntent().getStringExtra("active")),
-                Boolean.parseBoolean(getIntent().getStringExtra("published")),
-                Boolean.parseBoolean(getIntent().getStringExtra("sale_ok")));
+                Boolean.parseBoolean(getIntent().getStringExtra("published")));
 
         Toast.makeText(MainActivity2.this, p.getName(), Toast.LENGTH_SHORT).show();
+        ImageView imagen = (ImageView) findViewById(R.id.imageView);
+
+        byte[] decodedString = Base64.decode(p.getImagen(), Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+        imagen.setImageBitmap(decodedByte);
+
 
         TextView name = (TextView) findViewById(R.id.nameTV);
         name.setText(p.getName());

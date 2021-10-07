@@ -3,19 +3,19 @@ package dam;
 public class Products{
 	
 	int ID;
-	String name,list_price,description,volume,weight,stock;
+	String name,list_price,description,volume,weight,stock,imagen;
 	boolean sale_ok,active,is_published;
-	
-	public Products(int iD, String name, String list_price, String description, String volume, String weight,String stock,
+	public Products(int iD, String name, String list_price, String description, String volume, String weight,String stock,String imagen,
 			boolean sale_ok, boolean active, boolean is_published) {
 		super();
-		ID = iD;
+		this.ID = iD;
 		this.name = name;
 		this.list_price = list_price;
 		this.description = description;
 		this.volume = volume;
 		this.weight = weight;
 		this.stock = stock;
+		this.imagen = imagen;
 		this.sale_ok = sale_ok;
 		this.active = active;
 		this.is_published = is_published;
@@ -101,12 +101,26 @@ public class Products{
 		this.is_published = is_published;
 	}
 
+	
+
+
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
 	@Override
 	public String toString() {
 		return "Products [ID=" + ID + ", name=" + name + ", list_price=" + list_price + ", description=" + description
-				+ ", volume=" + volume + ", weight=" + weight + ", stock=" + stock + ", sale_ok=" + sale_ok
-				+ ", active=" + active + ", is_published=" + is_published + "]";
+				+ ", volume=" + volume + ", weight=" + weight + ", stock=" + stock + ", imagen=" + imagen + ", sale_ok="
+				+ sale_ok + ", active=" + active + ", is_published=" + is_published + "]";
 	}
+
+	
 
 	
 

@@ -3,10 +3,10 @@ package com.example.erronkauno;
 public class Products{
 
     int ID;
-    String name,list_price,description,volume,weight,stock;
+    String name,list_price,description,volume,weight,stock,imagen;
     boolean sale_ok,active,is_published;
 
-    public Products(int iD, String name, String list_price, String description, String volume, String weight,String stock,
+    public Products(int iD, String name, String list_price, String description, String volume, String weight,String stock,String imagen,
                     boolean sale_ok, boolean active, boolean is_published) {
         super();
         ID = iD;
@@ -16,6 +16,7 @@ public class Products{
         this.volume = volume;
         this.weight = weight;
         this.stock = stock;
+        this.imagen = imagen;
         this.sale_ok = sale_ok;
         this.active = active;
         this.is_published = is_published;
@@ -103,6 +104,14 @@ public class Products{
         this.stock = stock;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     @Override
     public String toString() {
         return "Products{" +
@@ -113,6 +122,7 @@ public class Products{
                 ", volume='" + volume + '\'' +
                 ", weight='" + weight + '\'' +
                 ", stock='" + stock + '\'' +
+                ", imagen='" + imagen + '\'' +
                 ", sale_ok=" + sale_ok +
                 ", active=" + active +
                 ", is_published=" + is_published +

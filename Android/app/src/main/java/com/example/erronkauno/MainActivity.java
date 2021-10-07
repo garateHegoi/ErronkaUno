@@ -15,6 +15,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
@@ -42,14 +43,15 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                         Intent datos = new Intent(MainActivity.this,MainActivity2.class);
                         datos.putExtra("id",a.getID()+"");
                         datos.putExtra("name",a.getName());
+                        datos.putExtra("list_price",a.getList_price());
                         datos.putExtra("description",a.getDescription());
                         datos.putExtra("volume",a.getVolume());
                         datos.putExtra("weight",a.getWeight());
                         datos.putExtra("stock",a.getStock());
-                        datos.putExtra("list_price",a.getList_price());
+                        datos.putExtra("imagen",a.getImagen());
+                        datos.putExtra("sale_ok",a.isSale_ok()+"");
                         datos.putExtra("active",a.isActive()+"");
                         datos.putExtra("published",a.isIs_published()+"");
-                        datos.putExtra("sale_ok",a.isSale_ok()+"");
                         startActivity(datos);
                     }
                 }
@@ -110,11 +112,11 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     public void aldatzailea(){
        ArrayList<String> produktuak = irakurri();
         for (String produktu : produktuak) {
-            String[] produktuak_aldatuta = produktu.split("[;]", 0);
+            String[] produktuak_aldatuta = produktu.split("[|]", 0);
             for (String gauza : produktuak_aldatuta) {
                 Log.d("xd", gauza);
             }
-            Products p = new Products(Integer.parseInt(produktuak_aldatuta[0]), produktuak_aldatuta[1], produktuak_aldatuta[2], produktuak_aldatuta[3], produktuak_aldatuta[4], produktuak_aldatuta[5],produktuak_aldatuta[6], Boolean.parseBoolean(produktuak_aldatuta[7]), Boolean.parseBoolean(produktuak_aldatuta[8]), Boolean.parseBoolean(produktuak_aldatuta[9]));
+            Products p = new Products(Integer.parseInt(produktuak_aldatuta[0]), produktuak_aldatuta[1], produktuak_aldatuta[2], produktuak_aldatuta[3], produktuak_aldatuta[4], produktuak_aldatuta[5],produktuak_aldatuta[6], produktuak_aldatuta[7], Boolean.parseBoolean(produktuak_aldatuta[8]), Boolean.parseBoolean(produktuak_aldatuta[9]), Boolean.parseBoolean(produktuak_aldatuta[10]));
             result.add(p);
         }
     }
@@ -124,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         ArrayList<String> produktuak = irakurri();
         ArrayList<String> names = new ArrayList<String>();
         for (String produktu : produktuak) {
-            String[] produktuak_aldatuta = produktu.split("[;]", 0);
+            String[] produktuak_aldatuta = produktu.split("[|]", 0);
             for (String gauza: produktuak_aldatuta){
                 Log.d("xd", gauza);
             }
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         return names;
     }
 
-    public ArrayList<String> aldatzaileastring(int index){
+    /*public ArrayList<String> aldatzaileastring(int index){
         ArrayList<String> produktuak = irakurri();
         ArrayList<String> result = new ArrayList<>();
         String[] produktuak_aldatuta = produktuak.get(index).split("[,]", 0);
@@ -143,6 +145,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             result.add(produktuak_aldatuta[i]);
         }
         return result;
-        }
+        }*/
 
     }
