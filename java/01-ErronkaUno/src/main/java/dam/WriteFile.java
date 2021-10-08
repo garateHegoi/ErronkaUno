@@ -46,16 +46,13 @@ public class WriteFile {
 		//Writer
 		try {
 		      File myObj = new File("..\\..\\Android\\app\\src\\main\\res\\raw\\products.txt");		      
-		      if (myObj.createNewFile()) {
 		        System.out.println("File created: " + myObj.getName());
 		        FileWriter myWriter = new FileWriter("..\\..\\Android\\app\\src\\main\\res\\raw\\products.txt");
 		        for(Products cus:lista) {
 		        	myWriter.write(cus.getID()+"|"+cus.getName()+"|"+cus.getList_price()+"|"+cus.getDescription()+"|"+cus.getVolume()+"|"+cus.getWeight()+"|"+cus.getStock()+"|"+cus.getImagen()+"|"+cus.isSale_ok()+"|"+cus.isActive()+"|"+cus.isIs_published()+"\n");
 		        }
 		        myWriter.close();
-		      } else {
-		        System.out.println("File already exists.");
-		      }
+
 		    } catch (IOException e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
