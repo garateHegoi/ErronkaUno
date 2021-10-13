@@ -19,7 +19,7 @@ public class MainActivity2 extends AppCompatActivity {
         String ide = getIntent().getStringExtra("id");
 
         Toast.makeText(MainActivity2.this, ide+"", Toast.LENGTH_SHORT).show();
-        Products p = new Products(Integer.parseInt(getIntent().getStringExtra("id")),
+        Product p = new Product(Integer.parseInt(getIntent().getStringExtra("id")),
                 getIntent().getStringExtra("name"),
                 getIntent().getStringExtra("list_price"),
                 getIntent().getStringExtra("description"),

@@ -1,13 +1,13 @@
 package com.example.erronkauno;
 
-public class Products{
+public class Product {
 
     int ID;
     String name,list_price,description,volume,weight,stock,imagen;
     boolean sale_ok,active,is_published;
 
-    public Products(int iD, String name, String list_price, String description, String volume, String weight,String stock,String imagen,
-                    boolean sale_ok, boolean active, boolean is_published) {
+    public Product(int iD, String name, String list_price, String description, String volume, String weight, String stock, String imagen,
+                   boolean sale_ok, boolean active, boolean is_published) {
         super();
         ID = iD;
         this.name = name;

@@ -4,15 +4,15 @@ import java.util.Collection;
 
 public interface ProductFile {
 
-public Collection<Products> getProducts();
+public Collection<Product> getProducts();
 	
     public void init();
 
-	public Collection<Products> findAll() ;
+	public Collection<Product> findAll() ;
 
-	public void insert(Products pelicula);
+	public void insert(Product pelicula);
 
-	public void edit(Products pelicula);
+	public void edit(Product pelicula);
 	
 	public void delete(long id) ;
 	
