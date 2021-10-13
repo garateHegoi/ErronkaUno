@@ -3,7 +3,6 @@ package com.example.erronkauno;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -99,7 +98,11 @@ public class MainActivity extends AppCompatActivity {
        ArrayList<String> produktuak = irakurri();
         for (String produktu : produktuak) {
             String[] produktuak_aldatuta = produktu.split("[|]", 0);
-            Products p = new Products(Integer.parseInt(produktuak_aldatuta[0]), produktuak_aldatuta[1], produktuak_aldatuta[2], produktuak_aldatuta[3], produktuak_aldatuta[4], produktuak_aldatuta[5],produktuak_aldatuta[6], produktuak_aldatuta[7], Boolean.parseBoolean(produktuak_aldatuta[8]), Boolean.parseBoolean(produktuak_aldatuta[9]), Boolean.parseBoolean(produktuak_aldatuta[10]));
+            Products p = new Products(Integer.parseInt(produktuak_aldatuta[0]),
+                    produktuak_aldatuta[1], produktuak_aldatuta[2], produktuak_aldatuta[3],
+                    produktuak_aldatuta[4], produktuak_aldatuta[5],produktuak_aldatuta[6],
+                    produktuak_aldatuta[7], Boolean.parseBoolean(produktuak_aldatuta[8]),
+                    Boolean.parseBoolean(produktuak_aldatuta[9]), Boolean.parseBoolean(produktuak_aldatuta[10]));
             result.add(p);
             names.add(produktuak_aldatuta[1]);
         }
