@@ -1,0 +1,9 @@
+com/example/erronkauno/Products.java
+ com.example.erronkauno.Products
+com/example/erronkauno/BuildConfig.java
+ com.example.erronkauno.BuildConfig
+com/example/erronkauno/MainActivity2.java
+ com.example.erronkauno.MainActivity2
+com/example/erronkauno/MainActivity.java
+ com.example.erronkauno.MainActivity
+ com.example.erronkauno.MainActivity$1
