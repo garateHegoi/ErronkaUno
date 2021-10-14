@@ -12,7 +12,7 @@ Javan, Springen Bean bidez Odooko datuak fitxategi batean idaztea.
 Mavenen ZIPa deskargatzen dugu. <a href="https://maven.apache.org/download.cgi">Hemen</a> deskargatu ahal duzu.
 
 ![image](https://user-images.githubusercontent.com/61788060/137280780-e2b478f2-4063-47c3-8370-7266b13f8aac.png)<br>
-Behin ZIPa deskonprimitutakoan bin karpeta pathean sartzen dugu. 
+Behin ZIPa deskonprimitutakoan bin karpeta sartzen dugu. 
 
 ![image](https://user-images.githubusercontent.com/61788060/137279768-c5c9f621-4126-45ff-b050-a00bf8dc2c83.png)<br>
 Komandu hau ejekutatzen dugu jar-a sortzeko.
