@@ -1,7 +1,7 @@
 # ErronkaUno
 
 <h3>HELBURUA</h3>
-Javan Bean-en bidez Odooko datuak fitxategi batean idaztea.
+Javan, Springen Bean bidez Odooko datuak fitxategi batean idaztea.
 
 <h3>ABIARAZTEKO MODUA</h3>
 <a href="https://github.com/garateHegoi/ErronkaUno/blob/main/Java/ErronkaUno/src/main/java/com/example/demo/Executer.java">ErronkaUno/Java/ErronkaUno/src/main/java/com/example/demo/Executer.java</a> da maina duen fitxategia.
