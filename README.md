@@ -6,7 +6,7 @@ Javan, Springen Bean bidez Odooko datuak fitxategi batean idaztea.
 <h3>ABIARAZTEKO MODUA</h3>
 <a href="https://github.com/garateHegoi/ErronkaUno/blob/main/Java/ErronkaUno/src/main/java/com/example/demo/Executer.java">ErronkaUno/Java/ErronkaUno/src/main/java/com/example/demo/Executer.java</a> da maina duen fitxategia.
 
-<h3>MAVEN INSTALAZIOA ETA JAR-a SORTU</h3>
+<h3>MAVENEN INSTALAZIOA ETA JAR-a NOLA SORTU</h3>
 
 ![image](https://user-images.githubusercontent.com/61788060/137280407-b30a53a9-654d-46a9-bead-b71941a1c23d.png)<br>
 Mavenen ZIPa deskargatzen dugu. <a href="https://maven.apache.org/download.cgi">Hemen</a> deskargatu ahal duzu.
