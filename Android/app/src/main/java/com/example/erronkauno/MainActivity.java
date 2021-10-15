@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ListView lv;
-    ArrayList<Products> result = new ArrayList<>();
+    ArrayList<Product> result = new ArrayList<>();
     ArrayList<String> names = new ArrayList<>();
     ArrayAdapter<String> adapter;
 
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, names);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((adapterView, view, i, l) -> {
-            for (Products a:result) {
+            for (Product a:result) {
                 if (a.getName().equals(adapter.getItem(i))){
                     Intent datos = new Intent(MainActivity.this,MainActivity2.class);
                     datos.putExtra("id",a.getID()+"");
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
        ArrayList<String> produktuak = irakurri();
         for (String produktu : produktuak) {
             String[] produktuak_aldatuta = produktu.split("[|]", 0);
-            Products p = new Products(Integer.parseInt(produktuak_aldatuta[0]),
+            Product p = new Product(Integer.parseInt(produktuak_aldatuta[0]),
                     produktuak_aldatuta[1], produktuak_aldatuta[2], produktuak_aldatuta[3],
                     produktuak_aldatuta[4], produktuak_aldatuta[5],produktuak_aldatuta[6],
                     produktuak_aldatuta[7], Boolean.parseBoolean(produktuak_aldatuta[8]),

@@ -20,7 +20,7 @@ public class MainActivity2 extends AppCompatActivity {
         String ide = getIntent().getStringExtra("id");
 
         Toast.makeText(MainActivity2.this, ide+"", Toast.LENGTH_SHORT).show();
-        Products p = new Products(Integer.parseInt(getIntent().getStringExtra("id")),
+        Product p = new Product(Integer.parseInt(getIntent().getStringExtra("id")),
                 getIntent().getStringExtra("name"),
                 getIntent().getStringExtra("list_price"),
                 getIntent().getStringExtra("description"),
@@ -49,28 +49,28 @@ public class MainActivity2 extends AppCompatActivity {
         TextView price = (TextView) findViewById(R.id.priceTV);
         price.setText(p.getList_price() + "€");
         TextView volume = (TextView) findViewById(R.id.volumeTV);
-        volume.setText("VOLUME:\n"+p.getVolume());
+        volume.setText("VOLUME\n"+p.getVolume());
         TextView weight = (TextView) findViewById(R.id.weightTV);
-        weight.setText("WEIGHT:\n"+p.getWeight());
+        weight.setText("WEIGHT\n"+p.getWeight());
         TextView active = (TextView) findViewById(R.id.activeTV);
-        active.setText("ACTIVE:\n"+p.isActive());
+        active.setText("ACTIVE\n"+p.isActive());
         if(p.isActive()){
             active.setBackgroundColor(Color.rgb(25, 178, 45));
         }else{
             active.setBackgroundColor(Color.rgb(253, 45, 0));
         }
         TextView published = (TextView) findViewById(R.id.publishedTV);
-        published.setText("PUBLISHED:\n"+p.is_published);
+        published.setText("PUBLISHED\n"+p.is_published);
         if(p.isIs_published()){
             published.setBackgroundColor(Color.rgb(25, 178, 45));
         }else{
             published.setBackgroundColor(Color.rgb(253, 45, 0));
         }
         TextView quantity = (TextView) findViewById(R.id.quantityTV);
-        quantity.setText("Stock:\n"+p.getStock());
+        quantity.setText("STOCK\n"+p.getStock());
 
         TextView sale_ok = (TextView) findViewById(R.id.sale_okTV);
-        sale_ok.setText("ON SALE:\n"+p.isSale_ok());
+        sale_ok.setText("ON SALE\n"+p.isSale_ok());
         if(p.isSale_ok()){
             sale_ok.setBackgroundColor(Color.rgb(25, 178, 45));
         }else{
