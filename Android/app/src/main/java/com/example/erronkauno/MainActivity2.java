@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory;
 public class MainActivity2 extends AppCompatActivity {
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
@@ -39,6 +40,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         imagen.setImageBitmap(decodedByte);
 
+        /*  */
 
         TextView name = (TextView) findViewById(R.id.nameTV);
         name.setText(p.getName());
