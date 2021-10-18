@@ -58,10 +58,10 @@ public class ProductTextFile implements ProductFile{
 		      } catch (SQLException e) {
 		         e.printStackTrace();
 		      }
-		try {
-		      File myObj = new File("..\\..\\Android\\app\\src\\main\\res\\raw\\products.txt");		      
+		try {		
+			File myObj = new File(".."+File.separator+".."+File.separator+"Android"+File.separator+"app"+File.separator+"src"+File.separator+"main"+File.separator+"res"+File.separator+"raw"+File.separator+"products.csv");		      
 		        System.out.println("File created: " + myObj.getName());
-		        FileWriter myWriter = new FileWriter("..\\..\\Android\\app\\src\\main\\res\\raw\\products.txt");
+		        FileWriter myWriter = new FileWriter(".."+File.separator+".."+File.separator+"Android"+File.separator+"app"+File.separator+"src"+File.separator+"main"+File.separator+"res"+File.separator+"raw"+File.separator+"products.csv");
 		        for(Product cus:products) {
 		        	myWriter.write(cus.getID()+"|"+cus.getName()+"|"+cus.getList_price()+"|"+cus.getDescription()+"|"+cus.getVolume()+"|"+cus.getWeight()+"|"+cus.getStock()+"|"+cus.getImagen()+"|"+cus.isSale_ok()+"|"+cus.isActive()+"|"+cus.isIs_published()+"\n");
 		        }
