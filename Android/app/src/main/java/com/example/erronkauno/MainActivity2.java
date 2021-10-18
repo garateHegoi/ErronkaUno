@@ -19,7 +19,6 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         String ide = getIntent().getStringExtra("id");
 
-        Toast.makeText(MainActivity2.this, ide+"", Toast.LENGTH_SHORT).show();
         Product p = new Product(Integer.parseInt(getIntent().getStringExtra("id")),
                 getIntent().getStringExtra("name"),
                 getIntent().getStringExtra("list_price"),
@@ -32,7 +31,6 @@ public class MainActivity2 extends AppCompatActivity {
                 Boolean.parseBoolean(getIntent().getStringExtra("active")),
                 Boolean.parseBoolean(getIntent().getStringExtra("published")));
 
-        Toast.makeText(MainActivity2.this, p.getName(), Toast.LENGTH_SHORT).show();
         ImageView imagen = (ImageView) findViewById(R.id.imageView);
 
         byte[] decodedString = Base64.decode(p.getImagen(), Base64.DEFAULT);
